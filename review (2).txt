@@ -1,0 +1,13 @@
+The application has a good logical layered design where in each layers have distinct roles and 
+functionalities. The most of the application code follows a good coding standards and naming conventions that is readable
+and easy to support and maintain.
+
+From coding perspective I have few minor observations that can be cosidered in future development:
+
+1. Always use style sheet to control the look and feel of the pages. Never specify font name
+and font size in any of the pages. Use appropriate style class. This will help in
+changing the UI of the application easily in future.
+
+
+
+2. Avoid using hardcoded/magic strings. Instead create a static class with constants, or an enum if you can.
