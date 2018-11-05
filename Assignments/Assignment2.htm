@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10;" />
+    <title>Xena Events</title>
+    <style>
+        table
+        {
+            font-family: arial;
+            border-collapse: collapse;
+            width: 100%;
+            align: center;
+        }
+        
+        td, th
+        {
+            border: 1px solid silver;
+            text-align: left;
+            padding: 8px;
+        }
+        #header
+        {
+            background-color: #efefef;
+            padding: 8px;
+            border: 1px solid silver;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+    <div id='header'>
+        <img src="xena.png"> <br>		
+	<span>Hot balloon riding event!</span>
+    </div>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <input type="text" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Age
+            </td>
+            <td>
+                <input type="number" required="true" min="18" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <input type="email" required="true">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City
+            </td>
+            <td>
+                <input list="cities" name="cities" required="true">
+                <datalist id="cities">
+                    <option value="Bangalore">
+                    <option value="Vizag">
+                    <option value="Rajkot">
+                    <option value="Chennai">
+                    <option value="Delhi">
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

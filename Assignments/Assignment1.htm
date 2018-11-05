@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10;" />
+    <title>Stock Trading App </title>
+    <style>
+        table
+        {
+            font-family: arial;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        
+        td, th
+        {
+            border: 1px solid silver;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        input:invalid
+        {
+            box-shadow: 0px 0px 2px 2px red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+    <h2>
+        Stocks</h2>
+    <table>
+        <tr>
+            <th>
+                TICKER
+            </th>
+            <th>
+                PRICE
+            </th>
+        </tr>
+        <tr>
+            <td>
+                WIPRO
+            </td>
+            <td>
+                300.45
+            </td>
+        </tr>
+        <tr>
+            <td>
+                INFY
+            </td>
+            <td>
+                100.45
+            </td>
+        </tr>
+        <tr>
+            <td>
+                TCS
+            </td>
+            <td>
+                430.45
+            </td>
+        </tr>
+        <tr>
+            <td>
+                TECHM
+            </td>
+            <td>
+                732.45
+            </td>
+        </tr>
+    </table>
+    <h2>
+        Stock Trading App</h2>
+    <table>
+        <tr>
+            <td>
+                Ticker
+            </td>
+            <td>
+                <input type="text" required="true" value="WIPRO">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quantity
+            </td>
+            <td>
+                <input type="number" required="true" min="10" max="100" step="10" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

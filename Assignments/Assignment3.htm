@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10;" />
+    <title>Awesome Online videos</title>
+    <style>
+        table
+        {
+            font-family: arial;
+            border-collapse: collapse;
+            width: 100%;
+            align: center;
+        }
+        
+        td, th
+        {
+            border: 1px solid silver;
+            text-align: left;
+            padding: 8px;
+        }
+        #header
+        {
+            background-color: #efefef;
+            padding: 8px;
+            border: 1px solid silver;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+    <div id='header'>
+        <img src="video.png"/>
+        <hr>
+        <video id="myVideo" width="500" height="400">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <hr>
+        <button onclick="playVid()" type="button">
+            Play Video</button>
+        <button onclick="pauseVid()" type="button">
+            Pause Video</button>
+    </div>
+    <script>
+        var vid = document.getElementById("myVideo");
+        function playVid() {
+            vid.play();
+        }
+
+        function pauseVid() {
+            vid.pause();
+        } 
+    </script>
+    </form>
+</body>
+</html>
