@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JQuery User Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        .divMain {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        
+        .divHeader {
+            background-color: #efefef;
+            padding: 30px;
+        }
+        
+        .bodybg {
+            background-color: #efefef;
+        }
+        
+        .error {
+            color: red;
+        }
+        .lblred {
+            color: red;
+        }
+        .lblblack {
+            color: black;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#first_form').submit(function(e) {
+                $(".error").remove();
+                e.preventDefault();
+                var first_email = $('#email').val();
+                if (first_email.length < 1) {
+                    $('#email').after('<span class="error">This field is required</span>');
+                }
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                var validEmail = emailReg.test(first_email);
+                if (!validEmail) {
+                    $('#email').after('<span class="error">Please enter a valid email</span>');
+                }
+                if ($('#password').val().length < 1) {
+                    $('#password').after('<span class="error">This field is required</span>');
+                }
+            });
+            $('#second_form').submit(function(e) {
+                $(".error").remove();
+                $( "label" ).removeClass( "lblred lblblack" )
+                e.preventDefault();
+                if ($("#member").val() == '0') {
+                    $('#member').after('<span class="error">This field is required</span>');
+                    $("#lblmember").addClass("lblred");
+                }
+                var second_email = $('#emailid').val();
+                if (second_email.length < 1) {
+                    $('#emailid').after('<span class="error">This field is required</span>');
+                    $("#lblemail").addClass("lblred");
+                }
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                var validEmail = emailReg.test(second_email);
+                if (!validEmail) {
+                    $('#emailid').after('<span class="error">Please enter a valid email</span>');
+                    $("#lblemail").addClass("lblred");
+                }
+                if ($('#pwd').val().length < 8) {
+                    $('#pwd').after('<span class="error">Password should be min. 8 Chars</span>');
+                    $("#lblpwd").addClass("lblred");
+                }
+                if ($('#cpwd').val().length < 8) {
+                    $('#cpwd').after('<span class="error">Password should be min. 8 Chars</span>');
+                    $("#lblcpwd").addClass("lblred");
+                }
+                if ($('#fullname').val().length < 1) {
+                    $('#fullname').after('<span class="error">Enter a valid name</span>');
+                    $("#lblfullname").addClass("lblred");
+                }
+                if ($("#gender").val() == '0') {
+                    $('#gender').after('<span class="error">This field is required</span>');
+                    $("#lblgender").addClass("lblred");
+                }
+                if (!$('#chk').prop('checked')) {
+                    $('#chk').css('outline-color', 'red');
+                    $('#chk').css('outline-style', 'solid');
+                    $('#chk').css('outline-width', 'thin');
+                } else {
+                    $('#chk').css('outline-color', 'white');
+                }
+
+            });
+        })
+    </script>
+</head>
+
+<body class="bodybg">
+    <div class="divMain">
+        <form id="first_form" method="post" action="#">
+            <h3>
+          JQuery User Registration Form
+        </h3>
+            <div class="divHeader">
+                <div class="row">
+                    <div class="col-xs-4">
+                        Already Registered?
+                    </div>
+                    <div class="col-xs-4">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-md btn-primary">
+                            Go</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-xs-5">
+                <hr>
+            </div>
+            <div class="col-xs-1">
+                <h4>
+            OR
+          </h4>
+            </div>
+            <div class="col-xs-6">
+                <hr>
+            </div>
+        </div>
+        <form id="second_form" method="post" action="#">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label id="lblmember">
+                            Register As *</label>
+                        <select id="member" name="member" class="form-control">
+                            <option value="0">Select Member Type</option>
+                            <option value="1">Gold</option>
+                            <option value="2">Silver</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label id="lblemail">
+                            Email ID *</label>
+                        <input type="email" class="form-control" name="emailid" id="emailid" placeholder="youremail@domain.com">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label id="lblpwd">
+                            Password *</label>
+                        <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label id="lblcpwd">
+                        Confirm Password</label>
+                    <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label id="lblfullname">
+                            Full Name *</label>
+                        <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label>
+                    </label>
+                    <input type="text" class="form-control" name="middlename" id="middlename" placeholder="Middle Name">
+                </div>
+                <div class="col-xs-4">
+                    <label>
+                    </label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label>
+                            Display Name</label>
+                        <input type="text" class="form-control" name="display" id="display" placeholder="">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label>
+                        Mobile Number</label>
+                    <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Mobile Number">
+                </div>
+                <div class="col-xs-4">
+                    <label id="lblgender">
+                        Gender *</label>
+                    <select class="form-control" name="gender" id="gender">
+                        <option value="0"></option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label>
+                            Captcha *</label>
+                        <h4>
+                xW0tQiD
+              </h4>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label>
+                            Enter the code here</label>
+                        <input type="text" class="form-control" name="ccode" id="ccode" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="chk" name="chk">I have read, understood and accepted the rules of membership</label>
+            <hr>
+            <div class="row">
+                <div class="col-xs-9"></div>
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-sm">
+                        Cancel</button>
+                </div>
+                <div class="col-xs-2">
+                    <button type="submit" class="btn btn-sm btn-success">
+                        Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
