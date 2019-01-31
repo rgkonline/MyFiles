@@ -1,0 +1,10 @@
+As per RBI's new regulation on data localisation, it is required to store all information about transactions involving indian cards within the country and purge all data that is stored at overseas servers.
+
+The application follows a consistent pattern that provides enough information to track the problem down. 
+
+ app handles exceptions and errors to prevent app crashes
+
+Use try/catch blocks around code that can potentially generate an exception and your code can recover from that exception
+
+only use constants as default values, and let them be overridden by values from a configuration file.
+
