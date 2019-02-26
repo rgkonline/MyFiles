@@ -1,0 +1,3 @@
+This is a web based training management application to drive effective training for employees by scheduling and tracking  trainings. Automated email reminders sent to employees and their line managers for upcoming and overdue training.
+
+Technologies used ASP.net, JQUERY, HTML and SQL Server.
